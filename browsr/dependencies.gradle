@@ -1,0 +1,46 @@
+ext {
+    version = [
+            activityKtx                : '1.6.1',
+            androidxCore               : '1.9.0',
+            appCompat                  : '1.6.1',
+            constraintLayout           : '2.1.4',
+            coreTesting                : '2.1.0',
+            coroutines                 : '1.6.4',
+            junit                      : '4.13.2',
+            koin                       : '2.1.6',
+            material                   : '1.3.1',
+            mockk                      : '1.10.2',
+            moshi                      : '1.14.0',
+            moshiKotlinCodegen         : '1.14.0',
+            moshiConverter             : '2.9.0',
+            okHttp                     : '4.10.0',
+            retrofit                   : '2.9.0',
+            room                       : '2.5.0',
+            scalars                    : '2.9.0',
+            timber                     : '4.7.1'
+    ]
+    libs = [
+            activityKtx                : "androidx.activity:activity-ktx:$version.activityKtx",
+            androidxCore               : "androidx.core:core-ktx:$version.androidxCore",
+            appCompat                  : "androidx.appcompat:appcompat:$version.appCompat",
+            constraintLayout           : "androidx.constraintlayout:constraintlayout:$version.constraintLayout",
+            coreTesting                : "androidx.arch.core:core-testing:$version.coreTesting",
+            coroutinesAndroid          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version.coroutines",
+            coroutinesCore             : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version.coroutines",
+            coroutinesTest             : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version.coroutines",
+            junit                      : "junit:junit:$version.junit",
+            koin                       : "org.koin:koin-android:$version.koin",
+            material                   : "com.google.android.material:material:$version.material",
+            mockk                      : "io.mockk:mockk:$version.mockk",
+            moshi                      : "com.squareup.moshi:moshi-kotlin:$version.moshi",
+            moshiKotlinCodegen         : "com.squareup.moshi:moshi-kotlin-codegen:$version.moshiKotlinCodegen",
+            moshiConverter             : "com.squareup.retrofit2:converter-moshi:$version.moshiConverter",
+            okHttp                     : "com.squareup.okhttp3:okhttp:$version.okHttp",
+            okHttpLoggingInterceptor   : "com.squareup.okhttp3:logging-interceptor:$version.okHttp",
+            retrofit                   : "com.squareup.retrofit2:retrofit:$version.retrofit",
+            room                       : "androidx.room:room-ktx:$version.room",
+            roomAnnotationProcessor    : "androidx.room:room-compiler:$version.room",
+            scalars                    : "com.squareup.retrofit2:converter-scalars:$version.scalars",
+            timber                     : "com.jakewharton.timber:timber:$version.timber"
+    ]
+}
