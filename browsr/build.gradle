@@ -40,6 +40,7 @@ dependencies {
     implementation libs.androidxCore
     implementation libs.appCompat
     implementation libs.coroutinesAndroid
+    implementation "androidx.startup:startup-runtime:1.1.1"
     implementation libs.koin
     implementation libs.okHttp
     implementation libs.moshi
