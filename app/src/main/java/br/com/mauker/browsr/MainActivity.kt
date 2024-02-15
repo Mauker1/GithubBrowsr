@@ -3,6 +3,7 @@ package br.com.mauker.browsr
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.lifecycle.ViewModel
 import br.com.mauker.browsr.lib.BrowsrLib
 import br.com.mauker.browsr.lib.BrowsrSDK
 import kotlinx.coroutines.CoroutineScope
@@ -10,8 +11,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel: MainViewModel by viewModel()
 
     private val sdk: BrowsrLib by lazy {
         BrowsrSDK(this)
