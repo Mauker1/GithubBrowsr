@@ -1,31 +1,24 @@
 package br.com.mauker.browsr.lib
 
 import android.content.Context
-import br.com.mauker.browsr.lib.di.databaseModule
-import br.com.mauker.browsr.lib.di.networkModule
-import br.com.mauker.browsr.lib.organizations.di.ghOrganizationsModule
 import br.com.mauker.browsr.lib.organizations.entity.Organization
 import br.com.mauker.browsr.lib.organizations.repository.GhRepository
 import br.com.mauker.browsr.lib.utils.NetworkUtils
-import br.com.mauker.browsr.lib.utils.di.utilsModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import org.koin.core.context.startKoin
 import timber.log.Timber
 
-class BrowsrSDK(private val context: Context): BrowsrLib, KoinComponent {
+class BrowsrSDK(private val context: Context): BrowsrLib, IsolatedKoinComponent() {
 
     init {
-        startKoin {
-            androidContext(context)
-            modules(
-                databaseModule,
-                networkModule,
-                ghOrganizationsModule,
-                utilsModule
-            )
-        }
+//        startKoin {
+//            androidContext(context)
+//            modules(
+//                databaseModule,
+//                networkModule,
+//                ghOrganizationsModule,
+//                utilsModule
+//            )
+//        }
         Timber.plant(Timber.DebugTree())
     }
 
