@@ -9,16 +9,14 @@ import br.com.mauker.browsr.lib.organizations.repository.GhRepository
 import br.com.mauker.browsr.lib.utils.NetworkUtils
 import br.com.mauker.browsr.lib.utils.di.utilsModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.KoinComponent
-import org.koin.core.context.KoinContextHandler
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import org.koin.core.context.startKoin
-import org.koin.core.inject
 import timber.log.Timber
 
 class BrowsrSDK(private val context: Context): BrowsrLib, KoinComponent {
 
     init {
-        KoinContextHandler.stop()
         startKoin {
             androidContext(context)
             modules(
