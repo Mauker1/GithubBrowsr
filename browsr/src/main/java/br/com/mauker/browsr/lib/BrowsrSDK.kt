@@ -1,33 +1,18 @@
 package br.com.mauker.browsr.lib
 
 import android.content.Context
-import androidx.startup.AppInitializer
 import br.com.mauker.browsr.lib.organizations.entity.Organization
 import br.com.mauker.browsr.lib.organizations.repository.GhRepository
 import br.com.mauker.browsr.lib.utils.NetworkUtils
-import org.koin.core.Koin
-import org.koin.core.component.KoinScopeComponent
-import org.koin.core.component.createScope
 import org.koin.core.component.inject
-import org.koin.core.scope.Scope
 import timber.log.Timber
 
-class BrowsrSDK(private val context: Context): BrowsrLib, KoinScopeComponent {
+class BrowsrSDK(context: Context): BrowsrLib, IsolatedKoinComponent() {
 
     init {
+        // MUST be called before using any DI.
+        DILibContext.init(context)
         Timber.plant(Timber.DebugTree())
-    }
-
-    private val browsrKoin: Koin by lazy {
-        AppInitializer
-            .getInstance(context)
-            .initializeComponent(BrowsrDiInitializer::class.java)
-    }
-
-    override fun getKoin(): Koin = browsrKoin
-
-    override val scope: Scope by lazy {
-        createScope(this)
     }
 
     private val networkUtils: NetworkUtils by inject()

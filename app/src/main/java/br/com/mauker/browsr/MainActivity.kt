@@ -1,9 +1,8 @@
 package br.com.mauker.browsr
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.lifecycle.ViewModel
+import androidx.appcompat.app.AppCompatActivity
 import br.com.mauker.browsr.lib.BrowsrLib
 import br.com.mauker.browsr.lib.BrowsrSDK
 import kotlinx.coroutines.CoroutineScope
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by viewModel()
 
     private val sdk: BrowsrLib by lazy {
-        BrowsrSDK(this)
+        BrowsrSDK(applicationContext)
     }
 
     private lateinit var txtResult: TextView
