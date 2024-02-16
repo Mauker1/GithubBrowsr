@@ -9,7 +9,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.KoinApplication
 import org.koin.dsl.koinApplication
 
-internal class DILibContext(context: Context) {
+internal class DILibContext private constructor(context: Context) {
 
     companion object {
         var instance: DILibContext? = null
@@ -17,7 +17,7 @@ internal class DILibContext(context: Context) {
                 if (field == null) {
                     throw IllegalStateException("DILibContext has not been initialized")
                 }
-                return field!!
+                return field
             }
 
         fun init(context: Context) {
@@ -25,7 +25,7 @@ internal class DILibContext(context: Context) {
         }
     }
 
-    val koinApp: KoinApplication by lazy {
+    private val koinApp: KoinApplication by lazy {
         koinApplication {
             androidContext(context)
             modules(
